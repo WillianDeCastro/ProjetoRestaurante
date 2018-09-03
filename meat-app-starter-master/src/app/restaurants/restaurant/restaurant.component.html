@@ -1,0 +1,16 @@
+<a [routerLink]="['/restaurants', rest.id]">
+  <div class="place-info-box">
+    <span class="place-info-box-icon">
+      <img [src]="rest.imagePath" />
+    </span>
+
+    <div class="place-info-box-content">
+      <span class="place-info-box-text">{{rest.name}}</span>
+      <span class="place-info-box-star">
+        <i class="fa fa-star"></i>{{rest.rating}}</span>
+      <span class="place-info-box-detail">{{rest.category}}</span>
+      <span class="place-info-box-detail">{{rest.deliveryEstimate}}</span>
+    </div>
+    <!-- /.info-box-content -->
+  </div>
+</a>
