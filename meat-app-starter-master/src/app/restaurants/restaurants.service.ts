@@ -4,6 +4,7 @@ import { Http } from '@angular/http';
 import { MEAT_API } from '../app.api';
 import { Observable } from '../../../node_modules/rxjs/Observable';
 import 'rxjs/add/operator/map';
+import { MenuItem } from '../restaurant-detail/menu-item/menu-item.model';
 
 
 
@@ -32,4 +33,8 @@ export class RestaurantsService {
             .map(Response => Response.json());
     }
 
+    MenuOfRestaurant(id: string): Observable<MenuItem[]> {
+        return this.myHttp.get(`${MEAT_API}/restaurants/${id}/menu`)
+            .map(Response => Response.json());
+    }
 }
