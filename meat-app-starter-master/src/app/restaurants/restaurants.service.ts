@@ -17,8 +17,8 @@ export class RestaurantsService {
     myRestaurants: IRestaurant[] = []
 
 
-    GetMyRestaurants(): Observable<IRestaurant[]> {
-        return this.myHttp.get(`${MEAT_API}/restaurants`)
+    GetMyRestaurants(search?: string): Observable<IRestaurant[]> {
+        return this.myHttp.get(`${MEAT_API}/restaurants`, { params: { q: search } })
             .map(response => response.json());
     }
 

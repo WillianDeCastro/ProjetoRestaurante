@@ -17,6 +17,7 @@ import { MenuItemComponent } from './restaurant-detail/menu-item/menu-item.compo
 import { ReviewsComponent } from './restaurant-detail/reviews/reviews.component';
 import { OrderSumaryComponent } from './order-sumary/order-sumary.component';
 import { SharedModule } from './shared/shared.module';
+import { LocationStrategy, HashLocationStrategy } from '@angular/common';
 
 
 

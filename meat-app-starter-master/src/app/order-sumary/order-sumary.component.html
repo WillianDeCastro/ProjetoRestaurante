@@ -9,8 +9,7 @@
     <p>
       <mt-rating (rated)="ratedChoose($event)"></mt-rating>
     </p>
-    <p [hidden]="!rated">
-
+    <p *ngIf="rated">
       nota {{numberChoosed}} ! Obrigado pela sua avaliação!
     </p>
   </div>
