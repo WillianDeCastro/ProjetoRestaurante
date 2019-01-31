@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule, LOCALE_ID, Component } from '@angular/core';
-import { HttpModule } from '@angular/http';
+import { HttpClientModule } from '@angular/common/http';
 import { RouterModule, PreloadAllModules } from '@angular/router';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -18,6 +18,7 @@ import { ReviewsComponent } from './restaurant-detail/reviews/reviews.component'
 import { OrderSumaryComponent } from './order-sumary/order-sumary.component';
 import { SharedModule } from './shared/shared.module';
 import { LocationStrategy, HashLocationStrategy } from '@angular/common';
+import { LoginComponent } from './security/login/login.component';
 
 
 
@@ -33,11 +34,12 @@ import { LocationStrategy, HashLocationStrategy } from '@angular/common';
     ShoppingCartComponent,
     MenuItemComponent,
     ReviewsComponent,
-    OrderSumaryComponent
+    OrderSumaryComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
-    HttpModule,
+    HttpClientModule,
     BrowserAnimationsModule,
     SharedModule.forRoot(),
     RouterModule.forRoot([
@@ -46,6 +48,7 @@ import { LocationStrategy, HashLocationStrategy } from '@angular/common';
       { path: 'order', loadChildren: './order/order.module#OrderModule' },
       { path: 'order-summary', component: OrderSumaryComponent },
       { path: 'restaurants', component: RestaurantsComponent },
+      { path: 'login', component: LoginComponent },
       {
         path: 'restaurants/:id', component: RestaurantDetailComponent,
         children: [

@@ -25,7 +25,7 @@ import { Observable } from 'rxjs/observable';
       ])
     ]),
     trigger('toggleSearch', [
-      state('hidden', style({ opacity: 0, "max-height": "0px" })),
+      state('hidden', style({ opacity: 0, display: "none" })),
       state('visible', style({ opacity: 1, "max-height": "70px", "margin-top": "20px" })),
       transition('* => *', animate('500ms 0s ease-in-out'))
     ])
@@ -56,8 +56,8 @@ export class RestaurantsComponent implements OnInit {
       .distinctUntilChanged()
       .switchMap(searchWords =>
         this.myServiceRestaurant.GetMyRestaurants(searchWords)
-        .catch(error => Observable.from([]))
-        )
+          .catch(error => Observable.from([]))
+      )
       .subscribe(rest => this.myRestaurants = rest);
 
     this.myServiceRestaurant.GetMyRestaurants()
